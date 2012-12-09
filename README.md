@@ -6,6 +6,7 @@ Undo library for browser and Node.
 Setup: 
 ```javascript
 var jundo = new JUndo();
+...
 ```
 
 To mark an action which can be undone:
@@ -41,4 +42,14 @@ var jundo1 = JUndo.get(context1),
 	...;
 ```
 
-That's it!  If not, check out the [specs](https://github.com/buunguyen/jundo/blob/master/test/jundo.specs.js).
+To remove a JUndo instance associated with a context:
+```javascript
+JUndo.remove(context1);
+```
+
+To clear all JUndo instances:
+```javascript
+JUndo.clear();
+```
+
+For more information, check out the [specs](https://github.com/buunguyen/jundo/blob/master/test/jundo.specs.js).
