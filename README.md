@@ -1,24 +1,25 @@
 jundo
 ====
 
-Simple undo/redo library for browser and Node.
+Undo library for browser and Node.
 
-First, setup: 
+Setup: 
 ```javascript
 var jundo = new JUndo();
 ```
 
-To mark an undo event, invoke `register()` with 2 functions, one which will be used for 
-undo and one for redo (the undo). 
+To mark an action which can be undone:
 
 ```javascript
 jundo.register(undoFunc, redoFunc);
 ```
 
-To undo or redo:
+`undoFunc` is the function that will be invoked upon undoing, `redoFunc` upon redoing.  For example, if an action that adds an object to the screen has been performed, the undo function should remove that object while the redo function should add that object back to the screen.
+
+To undo and redo:
 ```javascript
-jundo.undo();
-jundo.redo();
+if (jundo.undoCount() > 0) jundo.undo();
+if (jundo.redoCount() > 0) jundo.redo();
 ```
 
 To clear all registered functions:
@@ -31,6 +32,7 @@ Events:
 jundo.on('change', func(evt, actionName, undoCount, redoCount) {
 	// actionName: 'register', 'undo', 'redo', 'clear'
 });
+```
 
 For apps that require multiple JUndo instances:
 ```javascript
