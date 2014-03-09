@@ -101,30 +101,4 @@ describe('jundo', function() {
         jundo.register(dummy, dummy);
         jundo.clear();
         expect(jundo).toHaveCorrectCounts(0, 0);
-    });
-
-    it('allows creating multiple JUndo instances for different contexts', function() {
-        var ctx1 = {}, ctx2 = {}, jundo1, jundo2;
-        expect(jundo1 = JUndo.get(ctx1)).toBeDefined();
-        expect(jundo2 = JUndo.get(ctx2)).toBeDefined();
-
-        expect(jundo1).not.toBe(jundo2);
-        
-        expect(JUndo.get(ctx1)).toBe(jundo1);
-        expect(JUndo.get(ctx2)).toBe(jundo2);
-    });
-
-    it('allows removing JUndo instances associated with a context', function() {
-        var ctx = {}, jundo;
-        jundo1 = JUndo.get(ctx);
-        JUndo.remove(ctx);
-        expect(jundo).not.toBe(JUndo.get(ctx));
-    });
-
-    it('allows clearing all JUndo instances', function() {
-        var ctx = {}, jundo;
-        jundo1 = JUndo.get(ctx);
-        JUndo.clear();
-        expect(jundo).not.toBe(JUndo.get(ctx));
-    });
-});
+    });});

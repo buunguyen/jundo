@@ -3,7 +3,12 @@ jundo
 
 Undo library for browser and Node.
 
-Setup: 
+#### Install
+```
+npm install jundo
+```
+
+#### Usage
 ```javascript
 var jundo = new JUndo();
 ...
@@ -33,23 +38,6 @@ Events:
 jundo.on('change', func(evt, actionName, undoCount, redoCount) {
 	// actionName: 'register', 'undo', 'redo', 'clear'
 });
-```
-
-For apps that require multiple JUndo instances:
-```javascript
-var jundo1 = JUndo.get(context1),
-	jundo2 = JUndo.get(context2),
-	...;
-```
-
-To remove a JUndo instance associated with a context:
-```javascript
-JUndo.remove(context1);
-```
-
-To clear all JUndo instances:
-```javascript
-JUndo.clear();
 ```
 
 For more information, check out the [specs](https://github.com/buunguyen/jundo/blob/master/test/jundo.specs.js).

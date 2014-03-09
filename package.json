@@ -1,0 +1,26 @@
+{
+  "name": "jundo",
+  "version": "0.1.0",
+  "description": "Undo/redo framework for Node and browsers",
+  "homepage": "http://buunguyen.github.io/jundo",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:buunguyen/jundo.git"
+  },
+  "keywords": [
+    "undo",
+    "redo"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Buu Nguyen",
+    "email": "buunguyen@gmail.com"
+  },  
+  "dependencies": {
+    "evtify": "*"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.2"
+  }
+}
