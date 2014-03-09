@@ -25,6 +25,7 @@
   }],
   "ignore": [
     ".gitignore",
+    "node_modules",
     "package.json",
     "Gruntfile.coffee"
   ]
