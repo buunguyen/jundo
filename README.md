@@ -20,7 +20,7 @@ To mark an action which can be undone:
 jundo.register(undoFunc, redoFunc);
 ```
 
-`undoFunc` is the function that will be invoked upon undoing, `redoFunc` upon redoing.  For example, if an action that adds an object to the screen has been performed, the undo function should remove that object while the redo function should add that object back to the screen.
+`undoFunc` is the function that will be invoked upon undoing, `redoFunc` upon redoing.  For example, if an action that adds an object to a screen has been performed, the undo function should remove that object while the redo function should add that object back to the screen.
 
 To undo and redo:
 ```javascript
@@ -35,7 +35,7 @@ jundo.clear();
 
 Events:
 ```javascript
-jundo.on('change', func(evt, actionName, undoCount, redoCount) {
+jundo.on('change', function (evt, actionName, undoCount, redoCount) {
 	// actionName: 'register', 'undo', 'redo', 'clear'
 });
 ```
